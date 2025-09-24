@@ -24,7 +24,7 @@ async function query(filterBy) {
   try {
     const criteria = {
       name: { $regex: filterBy.name, $options: 'i' },
-      inStock: boolVal || '',
+      // inStock: boolVal || '',
     }
 	console.log('creteria:',criteria)
     const collection = await dbService.getCollection('toy')
