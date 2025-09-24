@@ -4,8 +4,10 @@ import { logger } from '../../services/logger.service.js'
 export async function getToys(req, res) {
     try {
         const filterBy = {
-            txt: req.query.txt || '',
+            name: req.query.name || '',
+            inStock: req.query.inStock || ''
         }
+        console.log('filter:',filterBy)
         const toys = await toyService.query(filterBy)
         res.json(toys)
     } catch (err) {
